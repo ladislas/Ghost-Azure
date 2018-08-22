@@ -109,7 +109,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 :: 4. Handle database creation and migrations.
 IF EXIST "%DEPLOYMENT_TARGET%\db.js" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd !NODE_EXE! db.js
+  call :ExecuteCmd "!NODE_EXE!" db.js
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
